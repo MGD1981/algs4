@@ -1,7 +1,8 @@
+
 public class Percolation {
     public int grid_size;
     public int[] grid_array;
-    public UF uf_grid;    
+    public QuickFindUF uf_grid;    
 
     public Percolation(int N) { // create N-by-N grid, with all sites blocked
         grid_size = N;
@@ -9,7 +10,7 @@ public class Percolation {
         for (int square : grid_array) {
             grid_array[square] = 1; // 1 is blocked, 0 is open
         }
-        uf_grid = new UF(grid_array);
+        uf_grid = new QuickFindUF(N*N+2);
         
     }
         
