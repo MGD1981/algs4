@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.Random;
-import java.util.Arrays;
 
 public class MonteCarlo {
     private static Scanner scanner = new Scanner(System.in);
@@ -22,7 +21,6 @@ public class MonteCarlo {
                 open_sites++;
             }
         }
-        System.out.println(Arrays.toString(grid.grid_array));
         System.out.println(open_sites + " / " + 
             (grid.grid_size * grid.grid_size) + 
             " sites to percolate (" + 

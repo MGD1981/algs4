@@ -24,22 +24,22 @@ public class Percolation {
         grid_array[(i * (grid_size-1)) + j -1] = 0;
         if (i > 1) {
             if (this.isOpen(i-1, j)) {
-                uf_grid.union((grid_size-1)*i + j - 1, grid_size*(i-1) + j - 1);
+                uf_grid.union((grid_size-1)*i + j - 1, grid_size*(i-2) + j - 1);
             }
         }
         if (i < grid_size) {
             if (this.isOpen(i+1, j)) {
-                uf_grid.union((grid_size-1)*i + j - 1, grid_size*(i+1) + j - 1);
+                uf_grid.union((grid_size-1)*i + j - 1, grid_size*i + j - 1);
             }
         }
         if (j > 1) {
             if (this.isOpen(i, j-1)) {
-                uf_grid.union((grid_size-1)*i + j - 1, grid_size*i + j - 2);
+                uf_grid.union((grid_size-1)*i + j - 1, grid_size*(i-1) + j - 2);
             }
         }
         if (j < grid_size) {
             if (this.isOpen(i, j+1)) {
-                uf_grid.union((grid_size-1)*i + j, grid_size*i + j);
+                uf_grid.union((grid_size-1)*i + j, grid_size*(i-1) + j);
             }
         }
     }
